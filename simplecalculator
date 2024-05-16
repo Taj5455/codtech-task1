@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class BasicCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Basic Calculator!");
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Choose an operation (addition, subtraction, multiplication, division): ");
+        String operation = scanner.next();
+
+        switch (operation.toLowerCase()) {
+            case "addition":
+                System.out.println("The result is: " + (num1 + num2));
+                break;
+            case "subtraction":
+                System.out.println("The result is: " + (num1 - num2));
+                break;
+            case "multiplication":
+                System.out.println("The result is: " + (num1 * num2));
+                break;
+            case "division":
+                if (num2 != 0) {
+                    System.out.println("The result is: " + (num1 / num2));
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid operation. Please choose from addition, subtraction, multiplication, or division.");
+                break;
+        }
+        scanner.close();
+    }
+}
